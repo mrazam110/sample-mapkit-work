@@ -25,6 +25,16 @@ class ImagesViewController: UIViewController, UICollectionViewDataSource, UIColl
         super.viewDidAppear(animated)
         
         self.navigationItem.title = pavilionId
+        
+        if pavilionId == "Pavilion 1" {
+            images.append(UIImage(named: "01")!)
+            images.append(UIImage(named: "02")!)
+        }else if pavilionId == "Pavilion 2" {
+            images.append(UIImage(named: "03")!)
+            images.append(UIImage(named: "04")!)
+        }
+        
+        self.collectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +43,7 @@ class ImagesViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("imgcel", forIndexPath: indexPath) as! ImageCollectionViewCell
+        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("imgcell", forIndexPath: indexPath) as! ImageCollectionViewCell
         
         cell.imgView.image = self.images[indexPath.row]
         

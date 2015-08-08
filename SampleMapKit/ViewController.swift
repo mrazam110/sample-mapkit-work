@@ -14,6 +14,8 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
     @IBOutlet weak var mapView: MKMapView!
     var locationManager:CLLocationManager!
     
+    var pavilionId = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -94,8 +96,10 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
         println(tapPoint.longitude)
         
         if pav1.containsCoordinate(tapPoint) {
+            pavilionId = "Pavilion 1"
             self.performSegueWithIdentifier("getpic", sender: self)
         }else if pav2.containsCoordinate(tapPoint){
+            pavilionId = "Pavilion 2"
             self.performSegueWithIdentifier("getpic", sender: self)
         }
         
@@ -110,6 +114,13 @@ class ViewController: UIViewController, MKMapViewDelegate,CLLocationManagerDeleg
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "getpic" {
+            if let dest = segue.destinationViewController as? ImagesViewController {
+                dest.pavilionId = self.pavilionId
+            }
+        }
+    }
     
 }
 

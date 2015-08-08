@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleMapKit" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                             <constraint firstItem="9mf-j0-ZQG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="zCI-xu-9AY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zux-fy-k9d"/>
+                    <navigationItem key="navigationItem" title="Map" id="zux-fy-k9d"/>
                     <connections>
                         <outlet property="mapView" destination="9mf-j0-ZQG" id="JgZ-dr-8qW"/>
                         <segue destination="T0f-NT-y9A" kind="show" identifier="getpic" id="Umn-ko-tGJ"/>
@@ -38,7 +38,7 @@
             </objects>
             <point key="canvasLocation" x="1244" y="357"/>
         </scene>
-        <!--Images View Controller-->
+        <!--Pavilion-->
         <scene sceneID="RGp-RM-lNe">
             <objects>
                 <viewController id="T0f-NT-y9A" customClass="ImagesViewController" customModule="SampleMapKit" customModuleProvider="target" sceneMemberID="viewController">
@@ -94,6 +94,7 @@
                             <constraint firstAttribute="trailing" secondItem="6n7-8F-QOa" secondAttribute="trailing" id="YZt-Ae-ody"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Pavilion" id="6oI-6L-RXn"/>
                     <connections>
                         <outlet property="collectionView" destination="6n7-8F-QOa" id="1r1-MK-fxp"/>
                     </connections>
@@ -105,7 +106,7 @@
         <!--Navigation Controller-->
         <scene sceneID="hcz-hP-Lk3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="gad-TF-iq9" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gad-TF-iq9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JSg-52-sr8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

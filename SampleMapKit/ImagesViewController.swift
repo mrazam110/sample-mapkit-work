@@ -12,11 +12,19 @@ class ImagesViewController: UIViewController, UICollectionViewDataSource, UIColl
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var pavilionId = ""
+    
     var images:[UIImage] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.navigationItem.title = pavilionId
     }
 
     override func didReceiveMemoryWarning() {
